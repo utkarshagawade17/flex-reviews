@@ -46,7 +46,7 @@ export default function Trends() {
   console.log('Trends data received:', { byMonth, byCategory, bySource });
 
   // Prepare data for charts
-  const monthlyData = byMonth?.filter(item => item.count > 0) || []; // Only months with data
+  const monthlyData = byMonth?.filter((item: any) => item.count > 0) || []; // Only months with data
   const categoryData = byCategory?.slice(0, 5) || []; // Top 5 categories
   const sourceData = bySource || [];
 
