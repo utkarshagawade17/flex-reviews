@@ -53,8 +53,8 @@ export default function Trends() {
   console.log('Processed chart data:', { monthlyData, categoryData, sourceData });
   console.log('Source data details:', sourceData);
   console.log('Source data length:', sourceData.length);
-  console.log('Source data for pie chart:', sourceData.map(item => ({ source: item.source, count: item.count })));
-  console.log('Source data structure check:', sourceData.map(item => ({ 
+  console.log('Source data for pie chart:', sourceData.map((item: any) => ({ source: item.source, count: item.count })));
+  console.log('Source data structure check:', sourceData.map((item: any) => ({ 
     hasSource: 'source' in item, 
     hasCount: 'count' in item, 
     source: item.source, 
@@ -244,7 +244,7 @@ export default function Trends() {
               {/* Visual Progress Bars */}
               <div className="space-y-3">
                 {sourceData.map((entry: any, index: number) => {
-                  const total = sourceData.reduce((sum, item) => sum + item.count, 0);
+                  const total = sourceData.reduce((sum: number, item: any) => sum + item.count, 0);
                   const percentage = (entry.count / total) * 100;
                   const colors = ['#3B82F6', '#EF4444'];
                   const color = colors[index % colors.length];
@@ -285,7 +285,7 @@ export default function Trends() {
                   Total Reviews
                 </div>
                 <div className="text-lg font-bold text-indigo-800 dark:text-indigo-200">
-                  {sourceData.reduce((sum, item) => sum + item.count, 0)} reviews
+                  {sourceData.reduce((sum: number, item: any) => sum + item.count, 0)} reviews
                 </div>
                 <div className="text-xs text-indigo-500 dark:text-indigo-300">
                   from {sourceData.length} source{sourceData.length !== 1 ? 's' : ''}
