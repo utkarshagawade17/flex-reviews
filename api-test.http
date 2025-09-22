@@ -1,0 +1,97 @@
+### Get All Reviews
+GET http://localhost:3000/api/reviews
+Content-Type: application/json
+
+### Get Reviews with Filters (e.g., source=hostaway, rating=5)
+GET http://localhost:3000/api/reviews?source=hostaway&rating=5
+Content-Type: application/json
+
+### Get Reviews with Search (e.g., for "great")
+GET http://localhost:3000/api/reviews?search=great
+Content-Type: application/json
+
+### Get Reviews with Tags (e.g., "featured")
+GET http://localhost:3000/api/reviews?tags=featured
+Content-Type: application/json
+
+### Get Reviews with Pagination (e.g., page 1, limit 2)
+GET http://localhost:3000/api/reviews?page=1&limit=2
+Content-Type: application/json
+
+### Get Trends Data (e.g., for 180 days)
+GET http://localhost:3000/api/reviews/trends?range=180d
+Content-Type: application/json
+
+### Get All Tags
+GET http://localhost:3000/api/reviews/tags
+Content-Type: application/json
+
+### Create a New Custom Tag
+POST http://localhost:3000/api/reviews/tags
+Content-Type: application/json
+
+{
+  "name": "NewCustomTag"
+}
+
+### Delete a Custom Tag (replace with actual tag ID)
+DELETE http://localhost:3000/api/reviews/tags/custom-tag-id-123
+Content-Type: application/json
+
+### Get a Single Review (e.g., Hostaway review with ID 1)
+GET http://localhost:3000/api/reviews/hostaway/1
+Content-Type: application/json
+
+### Update a Review (Approve)
+PATCH http://localhost:3000/api/reviews/hostaway/1
+Content-Type: application/json
+
+{
+  "approved": true
+}
+
+### Update a Review (Show on Web)
+PATCH http://localhost:3000/api/reviews/hostaway/1
+Content-Type: application/json
+
+{
+  "selectedForWeb": true
+}
+
+### Add a Tag to a Review (e.g., "featured")
+POST http://localhost:3000/api/reviews/hostaway/1/tags
+Content-Type: application/json
+
+{
+  "tag": "featured"
+}
+
+### Remove a Tag from a Review (e.g., "featured")
+DELETE http://localhost:3000/api/reviews/hostaway/1/tags/featured
+Content-Type: application/json
+
+### Bulk Approve Reviews
+POST http://localhost:3000/api/reviews/bulk-approve
+Content-Type: application/json
+
+{
+  "reviewIds": [
+    {"source": "hostaway", "id": "1"},
+    {"source": "google", "id": "g1"}
+  ]
+}
+
+### Bulk Show on Web Reviews
+POST http://localhost:3000/api/reviews/bulk-show
+Content-Type: application/json
+
+{
+  "reviewIds": [
+    {"source": "hostaway", "id": "1"},
+    {"source": "google", "id": "g1"}
+  ]
+}
+
+### Get Approved Reviews (for property page)
+GET http://localhost:3000/api/reviews/approved
+Content-Type: application/json

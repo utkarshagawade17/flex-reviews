@@ -315,6 +315,10 @@ For support, questions, or feature requests:
 - **Documentation**: Check the `/docs` folder
 - **API Testing**: Use the built-in test suite at `/api-test-comprehensive`
 
+## 🛠️ Credits / Tools
+
+AI assistance: Used a general-purpose AI assistant for minor scaffolding and refactor suggestions.
+
 ---
 
 **Built with ❤️ using Next.js, React Query, and TypeScript**
