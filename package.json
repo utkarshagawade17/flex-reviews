@@ -4,11 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma migrate deploy && next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "prisma generate",
-    "vercel-build": "prisma migrate deploy && next build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.89.0",
